@@ -1,7 +1,6 @@
 import * as Y from "yjs";
-import { WebrtcProvider } from "y-webrtc";
-import { IndexeddbPersistence } from 'y-indexeddb'
-import { TDBinding, TDShape } from "@tldraw/tldraw";
+import {WebrtcProvider} from "y-webrtc";
+import {TDBinding, TDShape} from "@tldraw/tldraw";
 
 const VERSION = "doandidinding";
 
@@ -14,7 +13,7 @@ export const roomID = `y-tldraw-${VERSION}`;
 export const provider = new WebrtcProvider(roomID, doc);
 
 // We persist the document content across sessions
-export const indexeddbProvider = new IndexeddbPersistence('y-indexeddb', doc)
+// export const indexeddbProvider = new IndexeddbPersistence('y-indexeddb', doc)
 
 // Export the provider's awareness API
 export const awareness = provider.awareness;
