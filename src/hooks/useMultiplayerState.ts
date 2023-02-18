@@ -9,9 +9,8 @@ import {
   yBindings,
   yShapes
 } from "../store";
-import type { TldrawPresence } from "../types";
 
-const room = new Room(awareness);
+const room = new Room(awareness, null);
 
 export function useMultiplayerState(roomId: string) {
   const [app, setApp] = useState<TldrawApp>();
@@ -81,7 +80,7 @@ export function useMultiplayerState(roomId: string) {
    */
   const onChangePresence = useCallback((app: TldrawApp, user: TDUser) => {
     if (!app.room) return;
-    room.setPresence<TldrawPresence>({ id: app.room.userId, tdUser: user });
+    room.setPresence({id: app.room.userId, tdUser: user});
   }, []);
 
   /**
@@ -90,12 +89,12 @@ export function useMultiplayerState(roomId: string) {
   useEffect(() => {
     if (!app || !room) return;
 
-    const unsubOthers = room.subscribe<TldrawPresence>("others", (users) => {
+    const unsubOthers = room.subscribe("others", (users) => {
       if (!app.room) return;
 
       const ids = users
         .filter((user) => user.presence)
-        .map((user) => user.presence!.tdUser.id);
+        .map((user) => user.presence?.tdUser.id);
 
       Object.values(app.room.users).forEach((user) => {
         if (user && !ids.includes(user.id) && user.id !== app.room?.userId) {
@@ -106,7 +105,7 @@ export function useMultiplayerState(roomId: string) {
       app.updateUsers(
         users
           .filter((user) => user.presence)
-          .map((other) => other.presence!.tdUser)
+          .map((other) => other.presence?.tdUser)
           .filter(Boolean)
       );
     });
@@ -117,7 +116,7 @@ export function useMultiplayerState(roomId: string) {
   }, [app]);
 
   /**
-   * Update app state whenever there is a change in Yjs CRDT docs 
+   * Update app state whenever there is a change in Yjs CRDT docs
    * (both local and remote changes)
    */
   useEffect(() => {
