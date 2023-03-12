@@ -1,0 +1,19 @@
+{
+  "useTabs": true,
+  "singleQuote": true,
+  "trailingComma": "none",
+  "semi": false,
+  "printWidth": 100,
+  "overrides": [
+    {
+      "files": [
+        "packages/**/*.md",
+        "app/*.md"
+      ],
+      "options": {
+        "useTabs": false,
+        "tabWidth": 2
+      }
+    }
+  ]
+}

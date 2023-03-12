@@ -1,0 +1,6 @@
+app/dist/
+app/.webpack/*
+app/mode_modules/*
+
+packages/**/dist/
+packages/**/node_modules/*

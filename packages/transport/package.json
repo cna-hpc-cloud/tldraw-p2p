@@ -1,11 +1,24 @@
 {
-  "name": "transport",
+  "name": "@secure-p2p-ipfs-tldraw/transport",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "Transport layer for modified tldraw",
+  "main": "./dist/index.js",
+  "source": "./index.ts",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start:transport": "node --watch dist/index.js"
   },
-  "author": "",
-  "license": "ISC"
+  "author": "Teofanus Gary Setiawan",
+  "license": "MIT",
+  "type": "module",
+  "dependencies": {
+    "@chainsafe/libp2p-gossipsub": "^6.2.0",
+    "@chainsafe/libp2p-noise": "^11.0.1",
+    "@libp2p/mplex": "^7.1.1",
+    "@libp2p/peer-id": "^2.0.2",
+    "@libp2p/tcp": "^6.1.2",
+    "@libp2p/webrtc-direct": "^5.0.0",
+    "@libp2p/webrtc-star": "^6.0.0",
+    "libp2p": "^0.42.2",
+    "uint8arrays": "^4.0.3"
+  }
 }

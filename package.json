@@ -1,105 +1,20 @@
 {
-  "name": "tldraw-app",
-  "productName": "tldraw-app",
+  "name": "secure-p2p-ipfs-tldraw",
   "version": "1.0.0",
-  "description": "My Electron application description",
-  "main": ".webpack/main",
-  "scripts": {
-    "start": "electron-forge start",
-    "package": "electron-forge package",
-    "make": "electron-forge make",
-    "publish": "electron-forge publish",
-    "lint": "eslint --ext .ts,.tsx ."
-  },
-  "keywords": [],
-  "author": {
-    "name": "doanandreas",
-    "email": "intern.doan@sayurbox.com"
-  },
+  "author": "",
+  "description": "Modified tldraw electron app with IPFS, webRTC, and security layer",
   "license": "MIT",
-  "config": {
-    "forge": {
-      "packagerConfig": {},
-      "makers": [
-        {
-          "name": "@electron-forge/maker-squirrel",
-          "config": {
-            "name": "tldraw_app"
-          }
-        },
-        {
-          "name": "@electron-forge/maker-zip",
-          "platforms": [
-            "darwin"
-          ]
-        },
-        {
-          "name": "@electron-forge/maker-deb",
-          "config": {}
-        },
-        {
-          "name": "@electron-forge/maker-rpm",
-          "config": {}
-        }
-      ],
-      "plugins": [
-        {
-          "name": "@electron-forge/plugin-webpack",
-          "config": {
-            "mainConfig": "./webpack.main.config.js",
-            "renderer": {
-              "config": "./webpack.renderer.config.js",
-              "entryPoints": [
-                {
-                  "html": "./src/index.html",
-                  "js": "./src/index.tsx",
-                  "name": "main_window"
-                }
-              ]
-            }
-          }
-        }
-      ]
-    }
-  },
+  "scripts": {},
+  "keywords": [],
+  "config": {},
+  "private": true,
   "devDependencies": {
-    "@electron-forge/cli": "^6.0.5",
-    "@electron-forge/maker-deb": "^6.0.5",
-    "@electron-forge/maker-rpm": "^6.0.5",
-    "@electron-forge/maker-squirrel": "^6.0.5",
-    "@electron-forge/maker-zip": "^6.0.5",
-    "@electron-forge/plugin-webpack": "6.0.5",
-    "@types/node": "^18.13.0",
-    "@types/react": "^18.0.28",
-    "@types/react-dom": "^18.0.10",
-    "@typescript-eslint/eslint-plugin": "^5.52.0",
-    "@typescript-eslint/parser": "^5.52.0",
-    "@vercel/webpack-asset-relocator-loader": "1.7.3",
-    "css-loader": "^6.7.3",
-    "electron": "23.0.0",
-    "eslint": "^8.34.0",
-    "eslint-plugin-import": "^2.27.5",
-    "fork-ts-checker-webpack-plugin": "^7.3.0",
-    "node-loader": "^2.0.0",
-    "style-loader": "^3.3.1",
-    "ts-loader": "^9.4.2",
-    "typescript": "~4.9.5"
-  },
-  "dependencies": {
-    "@tldraw/core": "^1.22.0",
-    "@tldraw/tldraw": "^1.28.0",
-    "@y-presence/client": "2.0.1",
-    "electron-squirrel-startup": "^1.0.0",
-    "mobx": "^6.8.0",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "y-indexeddb": "^9.0.9",
-    "y-webrtc": "^10.2.4",
-    "yjs": "13.5.45"
-  },
-  "workspaces": [
-    "packages/security",
-    "packages/transport",
-    "packages/database"
-  ]
+    "@typescript-eslint/eslint-plugin": "^5.54.1",
+    "@typescript-eslint/parser": "^5.54.1",
+    "eslint": "^8.35.0",
+    "eslint-plugin-react": "^7.32.2",
+    "eslint-plugin-unicorn": "^46.0.0",
+    "prettier": "^2.8.4",
+    "typescript": "^4.9.5"
+  }
 }
